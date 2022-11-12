@@ -24,10 +24,12 @@ class ProductItemCard extends StatelessWidget {
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(height: 8),
-          Text(
-            product.productDetail!.price,
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
+          product.productDetail != null
+              ? Text(
+                  product.productDetail!.price,
+                  style: Theme.of(context).textTheme.titleLarge,
+                )
+              : Container(),
           const SizedBox(height: 8),
           if (product.categories != null)
             ...product.categories!.map(

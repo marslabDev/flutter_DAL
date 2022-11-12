@@ -12,8 +12,13 @@ class ProductScreenArgs {
 }
 
 class ProductScreen extends StatefulWidget {
+  final String? title;
+  final Product? product;
+
   const ProductScreen({
     super.key,
+    required this.title,
+    required this.product,
   });
 
   @override
@@ -23,10 +28,8 @@ class ProductScreen extends StatefulWidget {
 class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
-    final args =
-        ModalRoute.of(context)!.settings.arguments as ProductScreenArgs;
-    final title = args.title;
-    final product = args.product;
+    final title = widget.title;
+    final product = widget.product;
 
     return Scaffold(
       appBar: AppBar(

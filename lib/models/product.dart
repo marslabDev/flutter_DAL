@@ -47,13 +47,13 @@ class Product {
     return {
       'id': id,
       'name': name,
-      'product_detail': productDetail?.toJSON(),
-      'categories': categories?.map((element) {
-        return element.toJSON();
-      }),
-      'tags': tags?.map((element) {
-        return element.toJSON();
-      }),
+      // 'product_detail': productDetail?.toJSON(),
+      // 'categories': categories?.map((element) {
+      //   return element.toJSON();
+      // }),
+      // 'tags': tags?.map((element) {
+      //   return element.toJSON();
+      // }),
     };
   }
 }

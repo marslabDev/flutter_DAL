@@ -4,44 +4,21 @@ import 'package:uuid/uuid.dart';
 
 import '../models/product.dart';
 
-List<Product> productTable = [
-  Product(
-    id: const Uuid().v4(),
-    name: faker.lorem.word(),
-    productDetail: ProductDetail(
-      price: '${faker.currency.random}',
-    ),
-  ),
+List<Product> fakeProducts = [];
 
-  Product(
-    id: const Uuid().v4(),
-    name: faker.lorem.word(),
-    productDetail: ProductDetail(
-      price: '${faker.currency.random}',
-    ),
-  ),
+List<Product> generateFakeProducts() {
+  fakeProducts.clear();
+  for (var i = 0; i < 5; i++) {
+    fakeProducts.add(
+      Product(
+        id: const Uuid().v4(),
+        name: faker.lorem.word(),
+        productDetail: ProductDetail(
+          price: faker.randomGenerator.decimal(scale: 999).toStringAsFixed(2),
+        ),
+      ),
+    );
+  }
 
-  Product(
-    id: const Uuid().v4(),
-    name: faker.lorem.word(),
-    productDetail: ProductDetail(
-      price: '${faker.currency.random}',
-    ),
-  ),
-
-  Product(
-    id: const Uuid().v4(),
-    name: faker.lorem.word(),
-    productDetail: ProductDetail(
-      price: '${faker.currency.random}',
-    ),
-  ),
-
-  Product(
-    id: const Uuid().v4(),
-    name: faker.lorem.word(),
-    productDetail: ProductDetail(
-      price: '${faker.currency.random}',
-    ),
-  ),
-];
+  return fakeProducts;
+}

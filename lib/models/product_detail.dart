@@ -1,8 +1,10 @@
 class ProductDetail {
+  String? id;
   String price = '';
   String? description;
 
   ProductDetail({
+    this.id,
     required this.price,
     this.description,
   });

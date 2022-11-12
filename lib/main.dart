@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_model_relation/providers/product_provider.dart';
-import 'package:flutter_model_relation/screens/product/product_screen.dart';
+import 'package:flutter_model_relation/routes/router.dart';
 import 'package:provider/provider.dart';
 
 import 'screens/home/home_screen.dart';
@@ -26,10 +26,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      routes: {
-        '/': (context) => const HomeScreen(title: 'E-Comm App'),
-        '/product': (context) => const ProductScreen(),
-      },
+      onGenerateRoute: AppRouter.generateRoute,
+      home: const HomeScreen(title: 'E-Comm App'),
     );
   }
 }

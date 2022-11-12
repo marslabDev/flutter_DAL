@@ -1,14 +1,19 @@
+import 'product.dart';
+
 class Category {
   String? id;
   String name = '';
   String? description;
   String? photo;
 
+  List<Product>? products;
+
   Category({
     this.id,
     required this.name,
     this.description,
     this.photo,
+    this.products,
   });
 
   factory Category.fromJSON(Map<String, dynamic> json) {
@@ -17,6 +22,7 @@ class Category {
       name: json['name'],
       description: json['description'],
       photo: json['photo'],
+      products: json['products']
     );
   }
 
